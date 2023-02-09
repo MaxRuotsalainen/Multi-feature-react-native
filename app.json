@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "6features",
+    "slug": "6features",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "6features"
+}
