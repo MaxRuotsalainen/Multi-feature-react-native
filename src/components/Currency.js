@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, TextInput, Modal } from 'react-native';
+import axios from 'axios';
 
 const CurrencyConverter = () => {
   const [inputCurrency, setInputCurrency] = useState('USD');
@@ -7,17 +8,17 @@ const CurrencyConverter = () => {
   const [inputValue, setInputValue] = useState(0);
   const [showInputCurrencyModal, setShowInputCurrencyModal] = useState(false);
   const [showOutputCurrencyModal, setShowOutputCurrencyModal] = useState(false);
+  const [exchangeRate, setExchangeRate] = useState(0);
 
-  const exchangeRates = {
-    USD: 1,
-    EUR: 0.9,
-    GBP: 0.8,
-    INR: 73,
-  };
+  useEffect(() => {
+    const fetchExchangeRate = async () => {
+      const response = await axios.get(`https://api.currencyapi.com/v3/latest?apikey=eRMbQoRwtt10k1dij5d1usJdu3hshodXHA5996gm&currencies=${outputCurrency}&base_currency=${inputCurrency}`);
+      setExchangeRate(response.data.data[outputCurrency].value);
+    };
+    fetchExchangeRate();
+  }, [inputCurrency, outputCurrency]);
 
-  const convert = () => {
-    return (inputValue * exchangeRates[outputCurrency]) / exchangeRates[inputCurrency];
-  };
+  const convert = () => inputValue * exchangeRate;
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

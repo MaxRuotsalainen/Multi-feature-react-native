@@ -7,7 +7,7 @@ import Cheatsheet from './Cheatsheet';
 import Currency from './Currency';
 import InfoCard from './InfoCard';
 import Weather from './Weather';
-
+import { NavigationContainer } from '@react-navigation/native';
 const MainPage = () => {
   const [selectedComponent, setSelectedComponent] = useState('None');
 
@@ -46,7 +46,9 @@ const MainPage = () => {
       {selectedComponent === 'Currency' && <Currency />}
       {selectedComponent === 'Weather' && <Weather />}
       {selectedComponent === 'Cheatsheet' && <Cheatsheet />}
+      <NavigationContainer>
       {selectedComponent === 'News' && <News />}
+      </NavigationContainer>
       {selectedComponent !== 'None' && (
         <TouchableOpacity
           style={styles.closeButton}

@@ -1,8 +1,7 @@
-import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image, Button } from "react-native";
-import { useState, useEffect } from "react";
-import { Card } from "react-native-paper";
+import React, { useState, useEffect } from "react";
+import { View, Text, ScrollView, StyleSheet, TouchableOpacity, Image } from "react-native";
 
-
+import FullNews from "./FullNews";
 
 const CategoryButtons = ({ onPress }) => (
   <View style={styles.categoryButtonContainer}>
@@ -20,28 +19,30 @@ const CategoryButtons = ({ onPress }) => (
     </TouchableOpacity>
   </View>
 );
+const News = (props) => {
+const [selectedNews, setSelectedNews] = useState(null);
+const [data, setData] = useState([]);
+const [selectedCategory, setSelectedCategory] = useState("General");
+const getArticles = () => {
 
-const News = () => {
-  const [data, setData] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState("General");
-  console.log(data);
+  const url = `https://newsapi.org/v2/everything?q=${selectedCategory}&apiKey=c57e8ea064f64b55a4dc0100c6b90497`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((json) => setData(json))
+    .catch((err) => console.log(err));
+};
 
-  const getArticles = () => {
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${selectedCategory}&apiKey=1f804abc9bf5432db60cbe929928d81f`;
-    fetch(url)
-      .then((res) => res.json())
-      .then((json) => setData(json))
-      .catch((err) => console.log(err));
-  };
+useEffect(() => {
+  getArticles();
+}, [selectedCategory]);
 
-  useEffect(() => {
-    getArticles();
-  }, [selectedCategory]);
-
-  return (
- 
-      <ScrollView style={styles.container}>
-      <View style={styles.categoryButtonContainer}>
+return (
+<>
+      {selectedNews ? (
+        <FullNews selectedNews={selectedNews} />
+      ) : (
+      ttff
+           <View style={styles.categoryButtonContainer}>
         <TouchableOpacity 
           style={styles.categoryButton}
           onPress={() => setSelectedCategory("business")}
@@ -67,33 +68,40 @@ const News = () => {
           <Text style={styles.categoryButtonText}>News</Text>
         </TouchableOpacity>
       </View>
-      {data.articles && data.articles.length > 0 ? (
-        <ScrollView contentContainerStyle={styles.container}>
-          {data.articles.map((article, index) => (
-            <Card key={index} style={styles.card}>
-              <Image 
-                source={{ uri: article.urlToImage }} 
-                style={styles.image} 
-              />
-              <View style={styles.content}>
-                <Text style={styles.title}>{article.title}</Text>
-                <Text style={styles.description}>{article.description}</Text>
-                <Text style={styles.publishedAt}>{article.publishedAt}</Text>
-              </View>
-            </Card>
-          ))}
+          
+          {data.articles && data.articles.length > 0 ? (
+            <ScrollView contentContainerStyle={styles.container}>
+              {data.articles.map((article, index) => (
+                <TouchableOpacity
+                  key={index}
+                  style={styles.card}
+                  onPress={() => setSelectedNews(article)}
+                >
+                  <Image
+                    source={{ uri: article.urlToImage }}
+                    style={styles.image}
+                  />
+                  <View style={styles.content}>
+                    <Text style={styles.title}>{article.title}</Text>
+                    <Text style={styles.description}>
+                      {article.description}
+                    </Text>
+                    <Text style={styles.publishedAt}>
+                      {article.publishedAt}
+                    </Text>
+                  </View>
+                </TouchableOpacity>
+              ))}
+            </ScrollView>
+          ) : (
+            <Text>Loading...</Text>
+          )}
         </ScrollView>
-      ) : (
-        <Text>Loading...</Text>
       )}
-    </ScrollView>
-    
-    
-
-  );
+    </>
+);
 };
-  
-  
+
    
 const styles = StyleSheet.create({
   container: {
@@ -150,7 +158,3 @@ const styles = StyleSheet.create({
   },
 });
 export default News;
-
-
-
-                      

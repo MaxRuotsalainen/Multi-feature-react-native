@@ -17,23 +17,12 @@
 <br />
 <div align="center">
   <a href="https://github.com/MaxRuotsalaineMn">
-    <img src="./src/maxruo.png" alt="Logo" width="80" height="80">
+    <img src="./ProjectImg/maxruo.png" alt="Logo" width="80" height="80">
   </a>
 
-<h3 align="center">Max Ruotsalainen Portfolio</h3>
+<h3 align="center">6 Feature react native app</h3>
 
-  <p align="center">
-   A 6 feature react native
-    <br />
-    <a href="https://maxruotsalainen.github.io/Max-Portfolio/"><strong>Preview the website»</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/MaxRuotsalainen/Max-Portfolio/issues">Report Bug</a>
-    ·
-   
-    
- 
-  </p>
+
 </div>
 
 
@@ -61,7 +50,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 <a href="https://github.com/MaxRuotsalainen">
-    <img src="preview.png" alt="Logo" width="1100" height="450">
+    <img src="./ProjectImg/Home.png" alt="Logo" width="450" height="1000">
   </a>
 
 
@@ -94,31 +83,31 @@ This app has 6 different features and can be run on android, ios and web.
 ## Screenshots
 <h2>Home </h2>
 <p>The home page with 6 buttons to each feature </p>
-<img src="" alt="img" width="300" height="600">
+<img src="./ProjectImg/Home.png" alt="img" width="300" height="600">
 
 <h2>Weather </h2>
 <p>The Weather page that displays the weather and you can choose which location </p>
-<img src="" alt="img" width="300" height="600">
+<img src="./ProjectImg/Weather.png" alt="img" width="300" height="600">
 
 <h2>Dice </h2>
 <p>The Dice page that has a dice that randomizes a number from 1-6 and shows it in a dice face </p>
-<img src="" alt="img" width="300" height="600">
+<img src="./ProjectImg/Dice.png" alt="img" width="300" height="600">
 
 <h2>Todo </h2>
 <p>A todo app where you can create Todo notes and delete them </p>
-<img src="" alt="img" width="300" height="600">
+<img src="./ProjectImg/Todo.png" alt="img" width="300" height="600">
 
 <h2>news </h2>
 <p>A news page where it fetches news from an api and you can choose news categories </p>
-<img src="" alt="img" width="300" height="600">
+<img src="./ProjectImg/News.png" alt="img" width="300" height="600">
 
 <h2>Currency </h2>
 <p>A currency converter </p>
-<img src="" alt="img" width="300" height="600">
+<img src="./ProjectImg/CurrencyCalculator.png" alt="img" width="300" height="600">
 
 <h2>Cheat Sheet </h2>
 <p>A cheat sheet page where you can see cheat sheets for html, css and javascript</p>
-<img src="" alt="Logo" width="300" height="600">
+<img src="./ProjectImg/CheatSheet.png" alt="Logo" width="300" height="600">
 
 
 <!-- LICENSE -->
@@ -138,16 +127,16 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/MaxRuotsalainen/Max-Portfolio.svg?style=for-the-badge
-[contributors-url]: https://github.com/MaxRuotsalainen/Max-Portfolio/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/MaxRuotsalainen/Max-Portfolio.svg?style=for-the-badge
-[forks-url]: https://github.com/MaxRuotsalainen/Max-Portfolio/network/members
-[stars-shield]: https://img.shields.io/github/stars/MaxRuotsalainen/Max-Portfolio.svg?style=for-the-badge
-[stars-url]: https://github.com/MaxRuotsalainen/Max-Portfolio/stargazers
-[issues-shield]: https://img.shields.io/github/issues/MaxRuotsalainen/Max-Portfolio.svg?style=for-the-badge
-[issues-url]: https://github.com/MaxRuotsalainen/Max-Portfolio/issues
-[license-shield]: https://img.shields.io/github/license/MaxRuotsalainen/Max-Portfolio.svg?style=for-the-badge
-[license-url]: https://github.com/MaxRuotsalainen/Max-Portfolio/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/MaxRuotsalainen/6features.svg?style=for-the-badge
+[contributors-url]: https://github.com/MaxRuotsalainen/6features/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/MaxRuotsalainen/6features.svg?style=for-the-badge
+[forks-url]: https://github.com/MaxRuotsalainen/6features/network/members
+[stars-shield]: https://img.shields.io/github/stars/MaxRuotsalainen/6features.svg?style=for-the-badge
+[stars-url]: https://github.com/MaxRuotsalainen/6features/stargazers
+[issues-shield]: https://img.shields.io/github/issues/MaxRuotsalainen/6features.svg?style=for-the-badge
+[issues-url]: https://github.com/MaxRuotsalainen/6features/issues
+[license-shield]: https://img.shields.io/github/license/MaxRuotsalainen/6features.svg?style=for-the-badge
+[license-url]: https://github.com/MaxRuotsalainen/6features/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/linkedin_username
 [product-screenshot]: images/screenshot.png
